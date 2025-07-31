@@ -1,0 +1,8 @@
+cryptography
+openai
+openpyxl
+pathlib
+requests
+streamlit
+streamlit-authenticator
+tiktoken

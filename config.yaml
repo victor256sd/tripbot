@@ -1,0 +1,16 @@
+credentials:
+  usernames:
+    victor:
+      email: victor@aberration.com
+      name: Victor
+      password: $2b$12$.ejUPQtRJR9cLgZd.e7fUeBpUFf5gXT/9RwXsZNCKhvWuT96wsywK
+    femi:
+      email: fdeala30@gmail.com
+      name: Femi
+      password: $2b$12$TwkhVVBAOEzpER6l2NQdMuw0VwWtf2L/oWez/2/kkrnmOSWmqJeAW
+cookie:
+  expiry_days: 30
+  key: overnight_signature_key # Must be string
+  name: overnight_cookie_name
+preauthorized:
+  emails:
