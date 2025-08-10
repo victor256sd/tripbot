@@ -99,6 +99,9 @@ if st.session_state.get('authentication_status'):
                 input = query,
                 model = model,
                 # temperature = 0.6,
+                text={
+                    "verbosity": "low"
+                },
                 tools = [{
                             "type": "file_search",
                             "vector_store_ids": [VECTOR_STORE_ID],
