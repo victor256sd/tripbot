@@ -120,40 +120,40 @@ if st.session_state.get('authentication_status'):
             file_list_str = ", ".join(retrieved_files)
             st.markdown(f"**File(s):** {file_list_str}")
 
-            st.markdown("#### Token Usage")
-            input_tokens = response2.usage.input_tokens
-            output_tokens = response2.usage.output_tokens
-            total_tokens = input_tokens + output_tokens
-            input_tokens_str = f"{input_tokens:,}"
-            output_tokens_str = f"{output_tokens:,}"
-            total_tokens_str = f"{total_tokens:,}"
+            # st.markdown("#### Token Usage")
+            # input_tokens = response2.usage.input_tokens
+            # output_tokens = response2.usage.output_tokens
+            # total_tokens = input_tokens + output_tokens
+            # input_tokens_str = f"{input_tokens:,}"
+            # output_tokens_str = f"{output_tokens:,}"
+            # total_tokens_str = f"{total_tokens:,}"
 
-            st.markdown(
-                f"""
-                <p style="margin-bottom:0;">Input Tokens: {input_tokens_str}</p>
-                <p style="margin-bottom:0;">Output Tokens: {output_tokens_str}</p>
-                """,
-                unsafe_allow_html=True
-            )
-            st.markdown(f"Total Tokens: {total_tokens_str}")
+            # st.markdown(
+            #     f"""
+            #     <p style="margin-bottom:0;">Input Tokens: {input_tokens_str}</p>
+            #     <p style="margin-bottom:0;">Output Tokens: {output_tokens_str}</p>
+            #     """,
+            #     unsafe_allow_html=True
+            # )
+            # st.markdown(f"Total Tokens: {total_tokens_str}")
 
-            if model == "gpt-4.1-nano":
-                input_token_cost = .1/1000000
-                output_token_cost = .4/1000000
-            elif model == "gpt-4o-mini":
-                input_token_cost = .15/1000000
-                output_token_cost = .6/1000000
-            elif model == "gpt-4.1":
-                input_token_cost = 2.00/1000000
-                output_token_cost = 8.00/1000000
-            elif model == "o4-mini":
-                input_token_cost = 1.10/1000000
-                output_token_cost = 4.40/1000000
+            # if model == "gpt-4.1-nano":
+            #     input_token_cost = .1/1000000
+            #     output_token_cost = .4/1000000
+            # elif model == "gpt-4o-mini":
+            #     input_token_cost = .15/1000000
+            #     output_token_cost = .6/1000000
+            # elif model == "gpt-4.1":
+            #     input_token_cost = 2.00/1000000
+            #     output_token_cost = 8.00/1000000
+            # elif model == "o4-mini":
+            #     input_token_cost = 1.10/1000000
+            #     output_token_cost = 4.40/1000000
 
-            cost = input_tokens*input_token_cost + output_tokens*output_token_cost
-            formatted_cost = "${:,.4f}".format(cost)
+            # cost = input_tokens*input_token_cost + output_tokens*output_token_cost
+            # formatted_cost = "${:,.4f}".format(cost)
             
-            st.markdown(f"**Total Cost:** {formatted_cost}")
+            # st.markdown(f"**Total Cost:** {formatted_cost}")
 
     # elif not submit:
     #         st.markdown("#### Response")
