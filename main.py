@@ -115,7 +115,7 @@ if st.session_state.get('authentication_status'):
         with sources_col:
             st.markdown("#### Sources")
             # Extract annotations from the response, and print source files.
-            annotations = response2.output[1].content[0].annotations
+            annotations = response2.output_text.annotation #output[1].content[0].annotations
             retrieved_files = set([response2.filename for response2 in annotations])
             file_list_str = ", ".join(retrieved_files)
             st.markdown(f"**File(s):** {file_list_str}")
