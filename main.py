@@ -88,7 +88,7 @@ if st.session_state.get('authentication_status'):
             st.error("Enter a question to search travel policies!")
             st.stop()            
         # Setup output columns to display results.
-        answer_col, sources_col = st.columns(2)
+        # answer_col, sources_col = st.columns(2)
         # Create new client for this submission.
         client2 = OpenAI(api_key=openai_api_key)
         # Query the aitam library vector store and include internet
@@ -106,19 +106,19 @@ if st.session_state.get('authentication_status'):
                 include=["output[*].file_search_call.search_results"]
             )
         # Write response to the answer column.    
-        with answer_col:
-            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output_text) #output[1].content[0].text)
-            st.markdown("#### Response")
-            st.markdown(cleaned_response)
-            # st.session_state.ai_response = cleaned_response
+        # with answer_col:
+        cleaned_response = re.sub(r'【.*?†.*?】', '', response2) #.output_text) #output[1].content[0].text)
+        st.markdown("#### Response")
+        st.markdown(cleaned_response)
+        # st.session_state.ai_response = cleaned_response
         # Write files used to generate the answer.
-        with sources_col:
-            st.markdown("#### Sources")
-            # Extract annotations from the response, and print source files.
-            annotations = response2.output_text.annotation #output[1].content[0].annotations
-            retrieved_files = set([response2.filename for response2 in annotations])
-            file_list_str = ", ".join(retrieved_files)
-            st.markdown(f"**File(s):** {file_list_str}")
+        # with sources_col:
+        #     st.markdown("#### Sources")
+        #     # Extract annotations from the response, and print source files.
+        #     annotations = response2.output[1].content[0].annotations
+        #     retrieved_files = set([response2.filename for response2 in annotations])
+        #     file_list_str = ", ".join(retrieved_files)
+        #     st.markdown(f"**File(s):** {file_list_str}")
 
             # st.markdown("#### Token Usage")
             # input_tokens = response2.usage.input_tokens
