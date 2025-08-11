@@ -52,7 +52,7 @@ if st.session_state.get('authentication_status'):
     
     # Model list, Vector store ID, assistant IDs (one for initial upload eval, 
     # the second for follow-up user questions).
-    MODEL_LIST = ["gpt-5-nano"] #"gpt-4o-mini"] #, "gpt-4.1-nano", "gpt-4.1", "o4-mini"]
+    MODEL_LIST = ["gpt-4o-mini"] #, "gpt-4.1-nano", "gpt-4.1", "o4-mini"] "gpt-5-nano"]
     OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
     VECTOR_STORE_ID = st.secrets["VECTOR_STORE_ID"]
     INSTRUCTION_ENCRYPTED = b'gAAAAABoiGk68zBaXY7_218kkk0sL8NsNW_cYRvoM2Z026FCZvFJe_7BmWs4YnFRzTMJC5SrCr1BI6p-ojSzH0x843GR-fCWe475f6mKlOfLqC_uueWNiTmPM_8_C--4MCHUXa-GVKI4SlmC76qf2HWpF6ZMhdaWw2xRwT2lJ3kRwpSYBiZbUgGOHsly62_CqnDmwiC0YNOTdUaYdqPoNa5LgVRyeCUnINgt0bey1snq3GI_v44-bS7mJqMGC85mVabdNkOVpgVQw60SCY3ELBRDBfzkWKp0vYw3qQIJJe40KKaZep_GkkI3d8i9t0v9vFDwA2XLaXq07h65Cuvl0ikE1dcwa_shB9dRe9XZsOrDhswZ8djr990AfkHpIOcLnC540VJNiMRwA4ztwMkKVcIFALD75S_7ijtUj4lzvDF4EhI28kcFGP4SmIV1NtONPfUs057PufLiY9lK_jVf-9Y5FGp0GLVdqZZHz1Hz7eSZjE7EideqnhoNMPYGLo7u0wZR1pvLRsQzJvTMbjZQcPLruooC2Fg3x4vWzBY7MTTtW-bKvOecVshZc-6HNcJzMunm4T3-X1A_eSnMAkUMWHczzIFYO-2DGAPoZ1U__6fm_lZMGYeBCmiIXmeoxUhe4TWfqHdSf06h7tc96YX71PfVomiRiDXGc8xyns1VZZFGQaKvr9L8bP4uTK-q4LUgbhT-zxOFqWMuWorOYbW-sTysoR3NhDNJTkepfFISSKYSShua11fvDe13IlBr30Gss2GbV9VE6a39T1vSMShb_xdWkfGPhkX0aGRT46BAj_zHrgi00K176a8Wgn4YPQ_h1Hku_QXpA2o9to6p08tjVMTQ4CRU90RAkm9oMpOcpjDLzqZMW9U8m6g4xbJzZJdezJbj04VYwipNRB6-UKCXgjoGrLYOxoTQiuNIhg7MeD2ZR3w3GH5LWQg03CCUDVyPmzPGuPnRC3cTCJgfvbDbCASx2CMVFTne5OtdEiDAJ0WtC3CCHn9lAl8buIpazUIPTY7VGiIVpRp1rJmAtPLlhwkROTSpws-GDMbS27fybpaEgP6kX_fb-HEvQklA5VDCh5Yu3faEtDcohTqSFVBAautT1fdwQ-xLsH6AgTi15r8LIWL66tfd4RdT8JQ8V3rtZzcDy0MpLah38zWlKDNlQV3ZW3RbFA_f9-bRmQGvc3b9k-HJUH46jNkMAH5O_LsuKwv5kurzGBBn3I-a70JaKLISZeRRZn3PyphKEYUwCP5-6OTGdf-MSCpNVJ7pVmzSqwDeNKpxY48MWB1Wv3c4ERHbZc9Yk9ZK4zBSXXCSWvLmbbHarkpMiMtaRXbJwififJiySx7W3XW1JP6DBkK9fppM9RTYStCq2JFiK50IoFO66-izKe8aehnGBt-eb2ctR5fmkHiuqxo5CRzWcMBOCv40upxHPZlt7S-79h3ZZ7lY8SOiemTbVVugfCFmsh6MgeHOeN6ipkk5jXGzgizxClT8pT-cLRGkF77hWJzceUFF_1N8YEhTAxS7qIzeZL2a2r4YQIdDYziUo5M_iRRFgT6BQSVl8YKbWQU_DsJ1QVPfv0GC0frHkZ7rx3M5zyOKvkGmmAw4rKPUq7NcwypZTIWspVk-8N1l49h8XcruVt-2cnNug_DbgwcwyWwKyGCFCDjnTSRGLUHT7wMXv5UKdgMu9N7-GKMMgF0j_SWxuCvFyziCN-e_WifNGnkuRnN6qPhC8jeHhWkGzqZBFYvAcOG0M65wiKpK0pFGopcU2HwkBxHZUfEnGBAFsE26pl8Re4h8cnH-FKHR9JVV6NstYkBTcsa0ZMFxij1A4niuqa2YowPRICThLxLnGjwmhQtdtWTVDLr1A1Mhv3SeOaDO1g_PjBq0PVsQD4i2rTsbuKTiVibvhATsb0ZIwlpd2iRvQ30QOPoCpS2_WtWpcM-4O9VCxyh55OAf905KjiyhVWSWu4v-ie3k4bTyWGdr2VaeUKHw_vNi0PXwea4fHBchO4RjJ-NBeGeayR-O2MP3qnE4X9zJi6oGTi-2UaJFElArCct0Uiv3tHoiW4w8uqooUPBRFNDsdvNPan2-PMs8qjG0iuAqE9Ak6zqPUvaoCeRcI-eucrH-IAN_ymXPZcYc3ZJLAG1gXnYiGZ8CRacDC91sgqfyoW08pRStYNEWZN77KdAGRK_2ESntIveAV97JjJMdPwtGOIyp6nTRJZxoY1WEw8BFw5jyW4K4vdgcBZiI4VzdGjxU0aN2whgHKxqJrg8wCmXA4rvpihUw8907jY0P1lL6SH6ksNA_ko1PEeSfysaBk0KPz2XAjj2ihBkjXJueGsEYyo7glSaYk7Tky50yXH2mqRDcCIabJa0scFANLmEYPf2t8WgEuciP9DuaM4QJmRcNqR1AhcAN24n7DslvoPTUie9IGazQR781c-rfNGVN352npJ_YkDZi9XVrxHgrzq82vAmuwY_V03V6D5fHThce_oe4cYwFTeqfxyqI3YvaP2BXxZ9__0FIqP_Tc1t64j-7_VpqB10YtJBme9ZnB-l8wGZJHw6I5Na7T4vQdmOCQGtDZNK_aF29sF4eQCBmtAE1fOQ65HBkqboG5KetTGjj1-YH3PCQ93gu_Ueh5YLeI6ZvBXs3fE0j2dwYlwvU4WeAPkm_Ayv58_GaGTT93MwXfls-veIe8-QZpl_2FacxCA_MNxpMn0U0bgUd8l-3VY9FyLPlTGb10AHSoQizKG9EaooAE80yEu5P2su-hhUCWAyyZE89wUWM_gUyTs8bgYI18dBCGR2VNn3vge2CRMxyxCNx-vtTnx-Jkl4PeqU8C2H5a6oFLX0E8mEEjK7fCgRAf07IczA97MVwjVAdrCfuy9z1D0jIq8-vgKnObCudASP10gEY_tS-N60hB7Z35lPRaBdySgy40UrjFTD1zoPGQ5gmmhqXLMmCtq25WqtobJmJqcvaJ7rAMtSuEQQeSaaKad5aBJJAzSRrtsVVMGzbfMIPJHznOoCE7_LfspZqs4UalB2rmwKZaWTDtjsTds8K7cDiOI-kjHROK8Rx0f3rIffxRGxvaWwWa93t4669XzPaDG7-DaG23rcR0S4pXpqTJ9a1jf_nXpzjI7te9--nLt_UdFbXC5pz8PPbFrYJ8e5yYbTazPXj4ZewfTsFAdnRzWYhSf1Xma-4TyXBYkxLwXSOewJbmohB_1RvQvVnRCohhA_ZSBisDh00_rDYs3-qb2XUYj_8-OYvuU8biRaFNOJ5xxMLksMdKqwjf-y6jWE9Smdjwe1h37j4PngG4wqF9_BGhq3uyNXUx-JDGSNcDlXD1_T1d0ezvMOGhMnC0wd0JQDie2jFIN63hmZ-c1ew3_pRDqxQZTTezrGWFFEBUnN8b07WngGNJp046zrTm1KRrqeIOOvF6Jei4NynuxAfQnsp5ngkZ2Dq0w0OgbGso_KMHYYELtINwOwoAeLwUCyeYnUMmYce-ujogWVVjZUe7iEhMH4X1-ANyIR0HdaymbUbob2egSg8LT1Ha8UwA0Ex8BQK'
@@ -98,10 +98,10 @@ if st.session_state.get('authentication_status'):
                 instructions = INSTRUCTION,
                 input = query,
                 model = model,
-                # temperature = 0.6,
-                text={
-                    "verbosity": "low"
-                },
+                temperature = 0.6,
+                # text={
+                #     "verbosity": "low"
+                # },
                 tools = [{
                             "type": "file_search",
                             "vector_store_ids": [VECTOR_STORE_ID],
@@ -110,7 +110,10 @@ if st.session_state.get('authentication_status'):
             )
         # Write response to the answer column.    
         # with answer_col:
-        cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output_text) #output[1].content[0].text)
+        try:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output_text) #output[1].content[0].text)
+        except:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output[1].content[0].text)
         st.markdown("#### Response")
         st.markdown(cleaned_response)
         # st.session_state.ai_response = cleaned_response
