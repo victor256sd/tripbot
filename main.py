@@ -116,6 +116,14 @@ if st.session_state.get('authentication_status'):
             cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output[1].content[0].text)
         st.markdown("#### Response")
         st.markdown(cleaned_response)
+
+        st.markdown("#### Sources")
+        # Extract annotations from the response, and print source files.
+        annotations = response2.output[1].content[0].annotations
+        retrieved_files = set([response2.filename for response2 in annotations])
+        file_list_str = ", ".join(retrieved_files)
+        st.markdown(f"**File(s):** {file_list_str}")
+
         # st.session_state.ai_response = cleaned_response
         # Write files used to generate the answer.
         # with sources_col:
