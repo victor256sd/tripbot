@@ -1,3 +1,6 @@
+# Copyright (c) 2025 victor256sd
+# All rights reserved.
+
 import streamlit as st
 import streamlit_authenticator as stauth
 import openai
