@@ -12,7 +12,7 @@ from yaml.loader import SafeLoader
 from pathlib import Path
 from cryptography.fernet import Fernet
 import re
-from st_copy import st_copy_button
+from st_copy import copy_button
 
 # Disable the button called via on_click attribute.
 def disable_button():
