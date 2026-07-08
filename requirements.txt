@@ -3,6 +3,7 @@ openai
 openpyxl
 pathlib
 requests
+st_copy
 streamlit
 streamlit-authenticator
 tiktoken
