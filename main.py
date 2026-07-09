@@ -80,12 +80,17 @@ if st.session_state.get('authentication_status'):
         st.error("Please enter your OpenAI API key!")
         st.stop()
 
-    if cleaned_response and file_list_str:
-        st.write("*The guidance and recommendations provided by this application are AI generated and informed by organizational travel policies and general best practices. They are intended for informational support only and do not constitute official policy interpretations, legal advice, or final approval decisions. Users should consult their organization’s travel policy documents, HR representatives, or legal advisors before making travel arrangements or submitting expenses based on the output. This tool is designed to assist, not replace, professional judgment or formal policy review.*")
+    # Initialize state once
+    if "cleaned_response" not in st.session_state:
+        st.session_state.cleaned_response = None
+    
+    if "file_list_str" not in st.session_state:
+        st.session_state.file_list_str = None
+
+    if st.session_state.cleaned_response and st.session_state.file_list_str:
+        st.write("*The guidance and recommendations provided by this app...*")
         st.markdown("#### Response")
-        st.markdown(cleaned_response)
-        st.markdown("#### Sources")
-        st.markdown(f"**File(s):** {file_list_str}")
+        st.markdown(st.session_state.cleaned_response)
     
     # Create new form to search aitam library vector store.    
     with st.form(key="qa_form", clear_on_submit=False, height=300):
@@ -136,6 +141,10 @@ if st.session_state.get('authentication_status'):
         retrieved_files = set([response2.filename for response2 in annotations])
         file_list_str = ", ".join(retrieved_files)
         st.markdown(f"**File(s):** {file_list_str}")
+
+        # Persist response across refreshes/reruns
+        st.session_state.cleaned_response = cleaned_response
+        st.session_state.file_list_str = file_list_str
 
         # Add a small copy icon button
         # copy_button(
