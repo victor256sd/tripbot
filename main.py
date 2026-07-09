@@ -86,11 +86,6 @@ if st.session_state.get('authentication_status'):
     
     if "file_list_str" not in st.session_state:
         st.session_state.file_list_str = None
-
-    if st.session_state.cleaned_response and st.session_state.file_list_str:
-        st.write("*The guidance and recommendations provided by this app...*")
-        st.markdown("#### Response")
-        st.markdown(st.session_state.cleaned_response)
     
     # Create new form to search aitam library vector store.    
     with st.form(key="qa_form", clear_on_submit=False, height=300):
@@ -153,7 +148,22 @@ if st.session_state.get('authentication_status'):
             copied_label="Copied!",
             icon="st",
         )
-        
+
+    if st.session_state.cleaned_response:
+        st.write("*The guidance and recommendations provided by this app...*")
+
+        if st.session_state.file_list_str:
+            st.markdown("#### Response")
+            st.markdown(st.session_state.cleaned_response)
+
+        # Add a small copy icon button
+        copy_button(
+            text=cleaned_response + "\n\nFile(s): " + file_list_str,
+            tooltip="Copy this text",
+            copied_label="Copied!",
+            icon="st",
+        )
+
         # st.session_state.ai_response = cleaned_response
         # Write files used to generate the answer.
         # with sources_col:
