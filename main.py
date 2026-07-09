@@ -79,6 +79,13 @@ if st.session_state.get('authentication_status'):
     if not openai_api_key:
         st.error("Please enter your OpenAI API key!")
         st.stop()
+
+    if cleaned_response and file_list_str:
+        st.write("*The guidance and recommendations provided by this application are AI generated and informed by organizational travel policies and general best practices. They are intended for informational support only and do not constitute official policy interpretations, legal advice, or final approval decisions. Users should consult their organization’s travel policy documents, HR representatives, or legal advisors before making travel arrangements or submitting expenses based on the output. This tool is designed to assist, not replace, professional judgment or formal policy review.*")
+        st.markdown("#### Response")
+        st.markdown(cleaned_response)
+        st.markdown("#### Sources")
+        st.markdown(f"**File(s):** {file_list_str}")
     
     # Create new form to search aitam library vector store.    
     with st.form(key="qa_form", clear_on_submit=False, height=300):
