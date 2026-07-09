@@ -146,7 +146,7 @@ if st.session_state.get('authentication_status'):
         st.session_state.cleaned_response = cleaned_response
         st.session_state.file_list_str = file_list_str
 
-        Add a small copy icon button
+        # Add a small copy icon button
         copy_button(
             text=cleaned_response + "\n**File(s): **" + file_list_str,
             tooltip="Copy this text",
