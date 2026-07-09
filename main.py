@@ -150,15 +150,17 @@ if st.session_state.get('authentication_status'):
         )
 
     if st.session_state.cleaned_response:
-        st.write("*The guidance and recommendations provided by this app...*")
-
+        st.write("*The guidance and recommendations provided by this application are AI generated and informed by organizational travel policies and general best practices. They are intended for informational support only and do not constitute official policy interpretations, legal advice, or final approval decisions. Users should consult their organization’s travel policy documents, HR representatives, or legal advisors before making travel arrangements or submitting expenses based on the output. This tool is designed to assist, not replace, professional judgment or formal policy review.*")
+        st.markdown("#### Response")
+        st.markdown(st.session_state.cleaned_response)
+        
         if st.session_state.file_list_str:
-            st.markdown("#### Response")
-            st.markdown(st.session_state.cleaned_response)
+            st.markdown("#### Sources")
+            st.markdown(f"**File(s):** {st.session_state.file_list_str}")
 
         # Add a small copy icon button
         copy_button(
-            text=cleaned_response + "\n\nFile(s): " + file_list_str,
+            text=st.session_state.cleaned_response + "\n\nFile(s): " + st.session_state.file_list_str,
             tooltip="Copy this text",
             copied_label="Copied!",
             icon="st",
