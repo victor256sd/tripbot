@@ -132,7 +132,7 @@ if st.session_state.get('authentication_status'):
 
         # Add a small copy icon button
         copy_button(
-            "Text to copy",
+            text=cleaned_response + "\n**File(s): **" + file_list_str,
             tooltip="Copy this text",
             copied_label="Copied!",
             icon="st",
