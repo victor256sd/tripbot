@@ -131,13 +131,19 @@ if st.session_state.get('authentication_status'):
         st.markdown(f"**File(s):** {file_list_str}")
 
         # Add a small copy icon button
-        st_copy_button(
-            text=response,          # Text to copy
-            key=f"copy_btn_{i}",    # Unique key for each button
-            icon="📋",              # Emoji or icon
-            help="Copy to clipboard",
-            size="small"            # small | medium | large
+        copy_button(
+            "Text to copy",
+            tooltip="Copy this text",
+            copied_label="Copied!",
+            icon="st",
         )
+        # st_copy_button(
+        #     text=response,          # Text to copy
+        #     key=f"copy_btn_{i}",    # Unique key for each button
+        #     icon="📋",              # Emoji or icon
+        #     help="Copy to clipboard",
+        #     size="small"            # small | medium | large
+        # )
         
         # st.session_state.ai_response = cleaned_response
         # Write files used to generate the answer.
