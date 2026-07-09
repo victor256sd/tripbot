@@ -12,7 +12,7 @@ from yaml.loader import SafeLoader
 from pathlib import Path
 from cryptography.fernet import Fernet
 import re
-from st_copy import copy_button
+# from st_copy import copy_button
 
 # Disable the button called via on_click attribute.
 def disable_button():
@@ -131,18 +131,11 @@ if st.session_state.get('authentication_status'):
         st.markdown(f"**File(s):** {file_list_str}")
 
         # Add a small copy icon button
-        copy_button(
-            text=cleaned_response + "\n**File(s): **" + file_list_str,
-            tooltip="Copy this text",
-            copied_label="Copied!",
-            icon="st",
-        )
-        # st_copy_button(
-        #     text=response,          # Text to copy
-        #     key=f"copy_btn_{i}",    # Unique key for each button
-        #     icon="📋",              # Emoji or icon
-        #     help="Copy to clipboard",
-        #     size="small"            # small | medium | large
+        # copy_button(
+        #     text=cleaned_response + "\n**File(s): **" + file_list_str,
+        #     tooltip="Copy this text",
+        #     copied_label="Copied!",
+        #     icon="st",
         # )
         
         # st.session_state.ai_response = cleaned_response
