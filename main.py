@@ -267,72 +267,34 @@ if st.session_state.get('authentication_status'):
     
     # Primary broad query
     PRIMARY_QUERY = """
-    (
-        "travel advisory" OR
-        "travel warning" OR
-        "travel alert" OR
-        "international travel" OR
-        "air travel" OR
-        "business travel" OR
-        "traveler safety" OR
-        "travel health" OR
-        "visa requirements" OR
-        "passport requirements" OR
-        "entry requirements" OR
-        "airport disruption" OR
-        "flight cancellations" OR
-        "airline strike" OR
-        "rail strike"
-    )
-    AND
-    (
-        travel OR travelers OR tourist OR tourists OR flight OR airport OR airline OR visa OR passport
-    )
-    NOT
-    (
-        "Wall Street" OR
-        "stock exchange" OR
-        stocks OR
-        crypto OR
-        maths OR
-        math OR
-        school OR
-        students OR
-        sports OR
-        celebrity OR
-        vacation deals OR
-        hotel reviews
-    )
+        '"travel advisory"',
+        '"travel warning"',
+        '"travel alert"',
+        '"visa requirements"',
+        '"passport requirements"',
+        '"entry requirements"',
+        '"travel health advisory"',
+        '"flight cancellations"',
+        '"airport disruption"',
+        '"airline strike"',
+        '"rail strike"',
+        '"transport strike"',
     """
     
     # Fallback queries if the broad search doesn't return enough relevant results  
     FALLBACK_QUERIES = [
-        '"travel visa" OR "visa requirements"',
-        '"passport rules" travel',
-        '"international entry requirements" travel',
-        '"country entry requirements" travelers',
-        '"border control" travelers',
-        '"travel advisory" travelers',
         '"government travel advisory"',
         '"embassy travel alert"',
-        '"overseas security alert" travel',
-        '"traveler safety alert"',
-        '"travel health advisory"',
-        '"traveler health alert"',
+        '"overseas security alert"',
+        '"international travel requirements"',
+        '"country entry requirements"',
         '"travel vaccination requirements"',
-        '"disease outbreak" travel',
-        '"health risks" travelers',
-        '"medical guidance" travelers',
-        '"airport disruption" travel',
+        '"disease outbreak travel"',
         '"air travel delays"',
-        '"flight cancellations" travel',
-        '"flight disruption" airline',
-        '"airline operations" disruption',
-        '"airport delays" travelers',
-        '"transport strike" travel',
-        '"rail strike" travelers',
-        '"train delays" travel',
-        '"public transit disruption" travelers',
+        '"airport delays"',
+        '"flight disruption"',
+        '"train delays"',
+        '"public transit disruption"',
     ]
 
     try:
