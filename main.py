@@ -269,73 +269,38 @@ if st.session_state.get('authentication_status'):
     
     # Primary broad query
     PRIMARY_QUERY = """
-        "visa requirements update" OR
-        "passport validity requirements" OR
-        "entry requirements update" OR
-        "electronic travel authorization" OR
-        "travel requirement" OR
-        "visa policy change" OR
-        "border entry rules" OR
-        "travel advisory" OR
-        "destination risk" OR
-        "travel warning" OR
-        "security alert travelers" OR
-        "civil unrest travel" OR
-        "travel safety alert" OR
-        "international travel risk" OR
-        "travel health advisory" OR
-        "vaccination requirements travel" OR
-        "disease outbreak travel" OR
-        "CDC travel health notice" OR
-        "WHO travel advisory" OR
-        "malaria travel guidance" OR
-        "yellow fever travel requirement" OR
-        "airline strike" OR
-        "airport disruption" OR
-        "flight cancellations" OR
-        "airport closure" OR
-        "air traffic control delays" OR
-        "airport security strike" OR
-        "major flight delays" OR
-        "rail strike" OR
-        "train strike" OR
-        "public transport strike" OR
-        "transit disruption" OR
-        "rail service disruption" OR
-        "transportation strike"
+
+    "visa requirements" OR
+    "entry requirements" OR
+    "electronic travel authorization" OR
+    "travel advisory" OR
+    "travel warning" OR
+    "travel health advisory" OR
+    "disease outbreak travel" OR
+    "airport disruption" OR
+    "flight cancellations" OR
+    "airline strike" OR
+    "rail strike" OR
+    "transportation strike"
     """
     
     # Fallback queries if the broad search doesn't return enough relevant results  
     FALLBACK_QUERIES = [
         'travel visa news',
         'passport rules',
-        'international entry rules',
         'country entry requirements',
-        'immigration travel update',
-        'border control travel',
-        'unsafe travel destination',
-        'country safety warning',
-        'embassy travel alert',
         'government travel advisory',
+        'embassy travel alert',
         'overseas security alert',
-        'travel caution',
         'traveler health alert',
-        'international health advisory',
         'travel vaccination news',
-        'health risks travelers',
         'disease alert travelers',
-        'medical travel guidance',
         'travel disruption',
         'air travel delays',
         'airport delays',
         'flight disruption news',
-        'airline operations update',
-        'transport strike airport',
-        'commuter disruption',
-        'transport delays',
+        'transport strike',
         'train delays',
-        'metro strike',
-        'bus strike',
         'public transit update',
     ]
 
