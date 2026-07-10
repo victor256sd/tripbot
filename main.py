@@ -222,7 +222,7 @@ if st.session_state.get('authentication_status'):
     
     # Model list, Vector store ID, assistant IDs (one for initial upload eval, 
     # the second for follow-up user questions).
-    MODEL_LIST = ["gpt-4o-mini"] #, "gpt-4.1-nano", "gpt-4.1", "o4-mini"] "gpt-5-nano"]
+    # MODEL_LIST = ["gpt-4o-mini"] #, "gpt-4.1-nano", "gpt-4.1", "o4-mini"] "gpt-5-nano"]
     OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
     VECTOR_STORE_ID = st.secrets["VECTOR_STORE_ID"]
     NEWS_API_KEY = st.secrets["NEWS_API_KEY"]
@@ -241,8 +241,9 @@ if st.session_state.get('authentication_status'):
     openai_api_key = os.environ.get("OPENAI_API_KEY", None)
 
     # Retrieve user-selected openai model.
-    model: str = st.selectbox("Model", options=MODEL_LIST)
-        
+    # model: str = st.selectbox("Model", options=MODEL_LIST)
+    model = "gpt-4o-mini"
+    
     # If there's no openai api key, stop.
     if not openai_api_key:
         st.error("Please enter your OpenAI API key!")
