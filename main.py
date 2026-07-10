@@ -233,7 +233,7 @@ if st.session_state.get('authentication_status'):
     INSTRUCTION = f.decrypt(INSTRUCTION_ENCRYPTED).decode()
 
     # Set page layout and title.
-    st.set_page_config(page_title="Tripbot AI", page_icon=":airplane:", layout="wide")
+    st.set_page_config(page_title="Tripbot AI", page_icon=":airplane:", layout="wide", initial_sidebar_state="collapsed")
     st.header(":airplane: Tripbot")
     st.markdown("TripBot helps employees quickly get answers to common travel policy questions using the company’s official policy documents. It prioritizes SDSURF travel policy first and refers to CSU travel policy only when SDSURF policy does not address the topic. TripBot is here to make travel guidance easier to understand, but for unusual, unclear, or department-specific situations, users should confirm with the appropriate team.")
     
