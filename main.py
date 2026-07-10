@@ -342,7 +342,7 @@ if st.session_state.get('authentication_status'):
         results = build_news_feed(final_count=10, threshold=10)
         print_results(results)
     except Exception as e:
-        st.sidebar.markdown("*Unable to fetch news.*")
+        st.sidebar.markdown(f"*Unable to fetch news.* Error: {e}")
 
     #--------------------------------------------------
     
