@@ -25,9 +25,6 @@ def disable_button():
 # Definitive CSS selectors for Streamlit 1.45.1+
 st.markdown("""
 <style>
-    div[data-testid="stToolbar"] {
-        display: none !important;
-    }
     div[data-testid="stDecoration"] {
         display: none !important;
     }
