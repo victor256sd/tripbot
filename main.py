@@ -159,7 +159,7 @@ def build_news_feed(final_count: int, threshold: int) -> List:
     return articles[:final_count]
 
 def print_results(results: List[Dict]):
-    st.sidebar.markdown("## Cellular Analysis News")
+    st.sidebar.markdown("## Travel News")
 
     for index, article in enumerate(results, start=1):
         description = article.get("description", "")
@@ -233,6 +233,7 @@ if st.session_state.get('authentication_status'):
     st.set_page_config(page_title="Tripbot AI", page_icon=":airplane:", layout="wide", initial_sidebar_state="collapsed")
     st.header(":airplane: Tripbot")
     st.markdown("TripBot helps employees quickly get answers to common travel policy questions using the company’s official policy documents. It prioritizes SDSURF travel policy first and refers to CSU travel policy only when SDSURF policy does not address the topic. TripBot is here to make travel guidance easier to understand, but for unusual, unclear, or department-specific situations, users should confirm with the appropriate team.")
+    st.info(":information_source: Access travel news in the sidebar.")
     
     # Field for OpenAI API key.
     openai_api_key = os.environ.get("OPENAI_API_KEY", None)
