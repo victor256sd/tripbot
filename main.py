@@ -159,7 +159,7 @@ def build_news_feed(final_count: int, threshold: int) -> List:
     return articles[:final_count]
 
 def print_results(results: List[Dict]):
-    st.sidebar.markdown("## :mailbox_with_mail: Travel News")
+    st.sidebar.markdown("## :sailboat: Travel News")
 
     for index, article in enumerate(results, start=1):
         description = article.get("description", "")
